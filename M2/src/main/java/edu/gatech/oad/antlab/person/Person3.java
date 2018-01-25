@@ -43,7 +43,7 @@ public class Person3 {
 	 */
 	private String calc(String input) {
 	  //Person 3 put your implementation here
-        if(input == null) return new NullPointerException("input cannot be null");
+        if(input == null) throw new NullPointerException("input cannot be null");
         String s = "";
         for(int i = 0; i < input.length(); i++) {
               s = input.charAt(i) + s;
