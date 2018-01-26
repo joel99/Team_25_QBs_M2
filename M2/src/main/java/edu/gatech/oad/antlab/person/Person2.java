@@ -52,6 +52,7 @@ public class Person2 {
 		for (int i = 0; i < charArrayInput.length; i++) {
 		    randomOrderName += charArrayInput[i];
 		}
+
 		return randomOrderName;
 	    }
 	}
