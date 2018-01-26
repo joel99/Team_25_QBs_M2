@@ -1,5 +1,6 @@
 # Compiled class file
 *.class
+M2/build/
 
 # Log file
 *.log
