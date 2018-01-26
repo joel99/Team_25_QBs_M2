@@ -1,0 +1,32 @@
+plugins {
+  id 'base'
+  id 'java'
+}
+
+description = 'Team 25 QBs M2 Gradle Build'
+version = '1.0'
+
+task compileTest(type: Exec, dependsOn: 'compileTestJava') {}
+
+dependencies {
+  compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+  compile fileTree(dir: "lib", include: '*.jar')
+  testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+repositories {
+  mavenCentral()  
+}
+
+jar {
+  manifest {
+      attributes 'Implementation-Title' : 'Gradle Quickstart' ,
+	               'Implementation-Version' : version,
+                 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+                 'Class-Path': configurations.compile.files.collect { "lib/$it.name" }.join(' ')
+  }
+  
+  from { (configurations.runtime).collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+
