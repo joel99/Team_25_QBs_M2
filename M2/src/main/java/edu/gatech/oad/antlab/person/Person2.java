@@ -31,14 +31,17 @@ public class Person2 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
+	private static String calc(String input) {
 	    if (input == null) {
 		throw new IllegalArgumentException("The input is null string and cannot be put in random order.");
 	    } else {
+
+		Random random = new Random();
+
 		char charArrayInput[] = input.toCharArray();
 		
 		for (int i = 0; i < charArrayInput.length; i++) {
-		    int j = random.nextInt(a.length);
+		    int j = random.nextInt(charArrayInput.length);
 
 		    char temp = charArrayInput[i];
 		    charArrayInput[i] = charArrayInput[j];
@@ -46,8 +49,8 @@ public class Person2 {
 		}
 
 		String randomOrderName = "";
-		for (int i = 0; i < a.length; i++) {
-		    randomOrderName += a[i];
+		for (int i = 0; i < charArrayInput.length; i++) {
+		    randomOrderName += charArrayInput[i];
 		}
 		return randomOrderName;
 	    }
