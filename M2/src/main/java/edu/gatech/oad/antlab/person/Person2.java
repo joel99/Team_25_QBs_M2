@@ -1,13 +1,11 @@
 package edu.gatech.oad.antlab.person;
 
-import java.util.Random;
-
 /**
  *  A simple class for person 2
  *  returns their name and a
  *  modified string 
  *
- * @author Jihwan Kim
+ * @author Bob
  * @version 1.1
  */
 public class Person2 {
@@ -31,30 +29,9 @@ public class Person2 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private static String calc(String input) {
-	    if (input == null) {
-		throw new IllegalArgumentException("The input is null string and cannot be put in random order.");
-	    } else {
-
-		Random random = new Random();
-
-		char charArrayInput[] = input.toCharArray();
-		
-		for (int i = 0; i < charArrayInput.length; i++) {
-		    int j = random.nextInt(charArrayInput.length);
-
-		    char temp = charArrayInput[i];
-		    charArrayInput[i] = charArrayInput[j];
-		    charArrayInput[j] = temp;
-		}
-
-		String randomOrderName = "";
-		for (int i = 0; i < charArrayInput.length; i++) {
-		    randomOrderName += charArrayInput[i];
-		}
-
-		return randomOrderName;
-	    }
+	private String calc(String input) {
+	  //Person 2 put your implementation here
+	  return null;
 	}
 	/**
 	 * Return a string rep of this object
