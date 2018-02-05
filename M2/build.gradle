@@ -5,8 +5,9 @@ plugins {
 
 description = 'Team 25 QBs M2 Gradle Build'
 version = '1.0'
+defaultTasks 'jar'
 
-task compileTest(type: Exec, dependsOn: 'compileTestJava') {}
+//task compileTest(type: Exec, dependsOn: 'compileTestJava') {}
 
 dependencies {
   compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
